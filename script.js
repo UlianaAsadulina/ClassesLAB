@@ -90,3 +90,29 @@ robin.companion.companion.inventory = ["small hat", "sunglasses"];
 robin.roll();
 robin.companion.roll();
 robin.companion.companion.roll();
+
+
+// -----------------Part 3: Class Features
+
+// When extending a class, the “child” class inherits all properties of its parents. 
+// This means that we do not need to account for the name, health, inventory, 
+// or roll method of Character children classes.
+
+// Let’s begin by creating an Adventurer class. 
+// What attributes might be specific to an adventure, but that not all characters have? 
+// Take a look at our example below, and expand upon it with your own properties and methods.
+
+class Adventurer extends Character {
+    constructor (name, role) {
+      super(name);
+      // Adventurers have specialized roles.
+      this.role = role;
+      // Every adventurer starts with a bed and 50 gold coins.
+      this.inventory.push("bedroll", "50 gold coins");
+    }
+    // Adventurers have the ability to scout ahead of them.
+    scout () {
+      console.log(`${this.name} is scouting ahead...`);
+      super.roll();
+    }
+}
