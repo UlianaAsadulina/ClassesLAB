@@ -77,7 +77,8 @@ class Character {
 // Add the roll method to the Character class.
 
 // Now, we can re-create Robin using the Character class!
-
+/*
+*
 const robin = new Character("Robin");
 robin.inventory = ["sword", "potion", "artifact"];
 robin.companion = new Character("Leo");
@@ -90,7 +91,7 @@ robin.companion.companion.inventory = ["small hat", "sunglasses"];
 robin.roll();
 robin.companion.roll();
 robin.companion.companion.roll();
-
+*/
 
 // -----------------Part 3: Class Features
 
@@ -103,7 +104,7 @@ robin.companion.companion.roll();
 // Take a look at our example below, and expand upon it with your own properties and methods.
 
 class Adventurer extends Character {
-    constructor (name, role) {
+    constructor (name, role, inventory) {
       super(name);
       // Adventurers have specialized roles.
       this.role = role;
@@ -116,3 +117,21 @@ class Adventurer extends Character {
       super.roll();
     }
 }
+
+// Next, create a Companion class with properties and methods specific to the companions.
+
+class Companion extends Character {
+    constructor (name, type, inventory) {
+      super(name, inventory);
+      // Companions have specialized types.
+      this.type = type;
+      
+    }
+    // Companions have the ability to scout ahead of them.
+    scout () {
+      console.log(`${this.name} is scouting ahead...`);
+      super.roll();
+    }
+}
+
+// Finally, change the declaration of Robin and the companions to use the new Adventurer and Companion classes.
