@@ -85,3 +85,8 @@ robin.companion.type = "Cat";
 robin.companion.companion = new Character("Frank");
 robin.companion.companion.type = "Flea";
 robin.companion.companion.inventory = ["small hat", "sunglasses"];
+
+// Even the companions can roll now; give it a try! 
+robin.roll();
+robin.companion.roll();
+robin.companion.companion.roll();
