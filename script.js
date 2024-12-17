@@ -132,18 +132,19 @@ class Companion extends Character {
 }
 
 // Finally, change the declaration of Robin and the companions to use the new Adventurer and Companion classes.
-// Now, we can re-create Robin using the Character class!
 
-const robin = new Adventurer("Robin", "Adventurer", ["sword", "potion", "artifact"]);
+
+const robin = new Adventurer("Robin", "Adventurer");
+robin.inventory.push ("sword", "potion", "artifact");
 
 robin.companion = new Companion("Leo", "Cat");
 
 robin.companion.companion = new Companion("Frank", "Flea");
+robin.companion.companion.inventory.push ("small hat", "sunglasses");
 
-robin.companion.companion.inventory[0] = "small hat";
-robin.companion.companion.inventory[1] = "sunglasses";
 
 console.log(robin);
 robin.scout();
 
-console.log(robin.companion.companion.inventory[1]);
+console.log(robin.inventory);
+console.log(robin.companion.companion.inventory);
